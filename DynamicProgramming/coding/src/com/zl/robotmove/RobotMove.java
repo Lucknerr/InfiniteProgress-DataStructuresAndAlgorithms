@@ -1,6 +1,6 @@
 package com.zl.robotmove;
 
-// 机器人移动方法数
+// 机器人移动方法数 暴力递归->动态规划
 public class RobotMove {
 
     /**
@@ -89,7 +89,7 @@ public class RobotMove {
     }
 
     /**
-     * 开始动态规划
+     * 动态规划
      * @param start 机器人起始位置
      * @param res 还剩余步数
      * @param aim 目标位置
