@@ -18,7 +18,7 @@ public class TopPlayerPoker {
      * 先手函数
      * @param poker 排列好的纸牌
      * @param L 当前剩余纸牌中最左的那张牌
-     * @param R 当前剩余纸牌中最左的那张牌
+     * @param R 当前剩余纸牌中最右的那张牌
      * @return 当前剩余纸牌中先手方获取的最优分数
      */
     public int first(int[] poker, int L, int R) {
@@ -37,7 +37,7 @@ public class TopPlayerPoker {
      * 后手函数
      * @param poker 排列好的纸牌
      * @param L 当前剩余纸牌中最左的那张牌
-     * @param R 当前剩余纸牌中最左的那张牌
+     * @param R 当前剩余纸牌中最右的那张牌
      * @return 当前剩余纸牌中先手方获取的最优分数
      */
     public int later(int[] poker, int L, int R) {
@@ -79,7 +79,7 @@ public class TopPlayerPoker {
      * 先手函数
      * @param poker 排列好的纸牌
      * @param L 当前剩余纸牌中最左的那张牌
-     * @param R 当前剩余纸牌中最左的那张牌
+     * @param R 当前剩余纸牌中最右的那张牌
      * @return 当前剩余纸牌中先手方获取的最优分数
      */
     public int first1(int[] poker, int L, int R, int[][] fMap, int[][] lMap) {
@@ -100,7 +100,7 @@ public class TopPlayerPoker {
      * 后手函数
      * @param poker 排列好的纸牌
      * @param L 当前剩余纸牌中最左的那张牌
-     * @param R 当前剩余纸牌中最左的那张牌
+     * @param R 当前剩余纸牌中最右的那张牌
      * @return 当前剩余纸牌中先手方获取的最优分数
      */
     public int later1(int[] poker, int L, int R, int[][] fMap, int[][] lMap) {
