@@ -1,0 +1,66 @@
+package com.zl.numberswitchstring;
+
+import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
+// 数字字符串转换 暴力递归->动态规划
+public class NumberSwitchString {
+
+    /**
+     * 暴力递归
+     * 数字能转换多少种字符串
+     * @param num 转换字符串的依据数
+     * @return 能转换多少种字符串
+     */
+    public int numberSwitchString(String num) {
+        return numberSwitchString(num.toCharArray(),0);
+    }
+
+    /**
+     *
+     * @param nums 数字字符数组
+     * @param index 来到当前字符位置
+     * @return 从索引index位置来到最后一个位置全部走完后返回的转换方法数
+     */
+    private int numberSwitchString(char[] nums, int index) {
+        // 如果index越界说明前面的决定都是对的,返回1个方法数
+        if (index == nums.length) {
+            return 1;
+        }
+        // 如果出现单独面对'0'的情况,说明前面做的决定都是错的,方法数返回0
+        if (nums[index] == '0') {
+            return 0;
+        }
+        // 情况1: 来到这说明上文条件都通过了,index去到下一个字符接着往下找,
+        // 如果后续字符都通过自然会返回转换方法数
+        int p1 = numberSwitchString(nums,index+1);
+        // 情况2: 存在前后两个数字转换成一个字母的情况
+        if (index+1 < nums.length && (nums[index] - '0') * 10 + (nums[index+1] - '0')  < 27) {
+            // 跳过后一个字符继续寻找剩下字符能转换的方法
+            p1 += numberSwitchString(nums,index+2);
+        }
+        return p1;
+    }
+
+    /**
+     * 动态规划
+     * 数字能转换多少种字符串
+     * @param num 转换字符串的依据数
+     * @return 能转换多少种字符串
+     */
+    public int numberSwitchString1(String num) {
+        // 依赖动态规划表,也可以依据暴力递归
+        int N = num.length()+1;
+        int[] k = new int[N];
+        k[N-1] = 1;
+        for (int index = N-2; index >= 0; index--) {
+            if (num.charAt(index) == '0') {
+                k[index] = 0;
+            } else {
+                k[index] = k[index + 1];
+                if (index + 1 < N - 1 && (num.charAt(index) - '0') * 10 + (num.charAt(index + 1) - '0') < 27) {
+                    k[index] += k[index + 2];
+                }
+            }
+        }
+        return k[0];
+    }
+}
