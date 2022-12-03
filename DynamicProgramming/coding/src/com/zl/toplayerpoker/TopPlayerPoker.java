@@ -21,7 +21,7 @@ public class TopPlayerPoker {
      * @param R 当前剩余纸牌中最右的那张牌
      * @return 当前剩余纸牌中先手方获取的最优分数
      */
-    public int first(int[] poker, int L, int R) {
+    private int first(int[] poker, int L, int R) {
         // L==R说明当前一轮只剩最后一张牌了
         if (L == R) {
             // 所以当前这一轮的先手玩家得最后一张牌
@@ -40,7 +40,7 @@ public class TopPlayerPoker {
      * @param R 当前剩余纸牌中最右的那张牌
      * @return 当前剩余纸牌中先手方获取的最优分数
      */
-    public int later(int[] poker, int L, int R) {
+    private int later(int[] poker, int L, int R) {
         // L==R说明当前一轮只剩最后一张牌了
         if (L == R) {
             // 由于当前这一轮的最后一张牌要归先手玩家,所以后手玩家在这种情况先不得分
@@ -82,7 +82,7 @@ public class TopPlayerPoker {
      * @param R 当前剩余纸牌中最右的那张牌
      * @return 当前剩余纸牌中先手方获取的最优分数
      */
-    public int first1(int[] poker, int L, int R, int[][] fMap, int[][] lMap) {
+    private int first1(int[] poker, int L, int R, int[][] fMap, int[][] lMap) {
         if (fMap[L][R] != -1) {
             return fMap[L][R];
         }
@@ -103,7 +103,7 @@ public class TopPlayerPoker {
      * @param R 当前剩余纸牌中最右的那张牌
      * @return 当前剩余纸牌中先手方获取的最优分数
      */
-    public int later1(int[] poker, int L, int R, int[][] fMap, int[][] lMap) {
+    private int later1(int[] poker, int L, int R, int[][] fMap, int[][] lMap) {
         if (lMap[L][R] != -1) {
             return lMap[L][R];
         }
