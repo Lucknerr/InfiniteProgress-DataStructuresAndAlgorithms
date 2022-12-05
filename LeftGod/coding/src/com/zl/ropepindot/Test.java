@@ -1,6 +1,6 @@
 package com.zl.ropepindot;
 
-import com.zl.zerosumpacksack.ZeroSumPacksack;
+import com.zl.ropepindot.RopePinDot;
 
 public class Test {
     public static void main(String[] args) {
