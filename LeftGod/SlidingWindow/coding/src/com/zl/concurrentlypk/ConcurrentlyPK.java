@@ -48,4 +48,34 @@ public class ConcurrentlyPK {
         }
         return ans;
     }
+
+    /**
+     * 暴力递归
+     * @param arr 每个人的能力值
+     * @param k 能力差值
+     * @return 最多可以同时进行多少场比赛
+     */
+    public int PK1(int arr, int k) {
+
+    }
+
+    /**
+     *
+     * @param arr 每个人的能力值
+     * @param k 能力差值
+     * @param i 第i号人
+     * @return 最多可以同时进行多少场比赛
+     */
+    public int f(int[] arr, boolean[] sta, int k, int i) {
+        if(i == arr.length) {
+            return 0;
+        }
+        sta[i] = true;
+        for (int j = 0;j < arr.length;j++) {
+            boolean[] s = new boolean[arr.length];
+            if (!sta[i]) {
+                arr[i] + arr[j] == k ? 1 + f()
+            }
+        }
+    }
 }

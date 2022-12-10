@@ -6,7 +6,7 @@ public class ZeroSumPacksack {
     /**
      * 暴力递归
      * 获取背包能装下物品的最大价值
-     * @param w 每个物品的重量
+     * @param w 每个物品的重量52
      * @param v 每个物品的价值
      * @param bag 背包总装载重量
      * @return 能装下物品的最大价值
