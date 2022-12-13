@@ -1,5 +1,6 @@
 package com.zl.printstringallsubsequence;
 
+// 打印字符串的所有子序列
 public class PrintStringAllSubSequence {
 
     /**

@@ -27,7 +27,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/InfiniteProgress/DataStructuresAndAlgorithms/LeftGod/BruteforceRecursion/coding",
+    "last_opened_file_path": "D:/InfiniteProgress/DataStructuresAndAlgorithms/LeftGod/DynamicProgramming/coding",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -36,11 +36,12 @@
       <recent name="D:\InfiniteProgress\DataStructuresAndAlgorithms\LeftGod\BruteforceRecursion\coding\src\com\zl" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zl.printstringfullpermutation" />
       <recent name="com.zl.printstringallsubsequencenorepeat" />
       <recent name="com.zl.printstringallsubsequence" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.com.zl.printstringallsubsequencenorepeat.Test">
+  <component name="RunManager" selected="Application.com.zl.printstringfullpermutation.Test">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.zl.towerofhanoi.Test" />
       <module name="coding" />
@@ -80,8 +81,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.zl.printstringfullpermutation.Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zl.printstringfullpermutation.Test" />
+      <module name="coding" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zl.printstringfullpermutation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.com.zl.printstringfullpermutation.Test" />
         <item itemvalue="Application.com.zl.printstringallsubsequencenorepeat.Test" />
         <item itemvalue="Application.com.zl.printstringallsubsequence.Test" />
         <item itemvalue="Application.Test" />
@@ -97,7 +112,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670637460421</updated>
       <workItem from="1670637461622" duration="51000" />
-      <workItem from="1670638046293" duration="6111000" />
+      <workItem from="1670638046293" duration="13345000" />
     </task>
     <servers />
   </component>

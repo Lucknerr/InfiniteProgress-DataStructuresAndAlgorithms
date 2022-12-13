@@ -3,6 +3,7 @@ package com.zl.printstringallsubsequencenorepeat;
 import java.util.HashSet;
 import java.util.Set;
 
+// 打印字符串的所有子序列去重
 public class PrintStringAllSubSequenceNoRepeat {
 
     /**

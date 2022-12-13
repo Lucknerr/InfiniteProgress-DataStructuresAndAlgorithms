@@ -1,0 +1,90 @@
+package com.zl.currencygroup2;
+
+// 货币组合问题2
+public class CurrencyGroup2 {
+
+    /**
+     * 暴力递归
+     * @param arr 货币面值数组
+     * @param aim 目标面值
+     * @return 返回最大组合方案
+     */
+    public int currencygroup(int[] arr, int aim) {
+        return f(arr,0,aim);
+    }
+
+    /**
+     * 暴力递归 从左向右的尝试模型
+     * @param arr 货币面值数组
+     * @param i i位置及其往后所有面值
+     * @param aim 目标面值
+     * @return 返回剩余决定的最大
+     */
+    public int f(int[] arr, int i, int aim) {
+        // 当剩余面值为0时 说明之前做的决定是对的返回存在1种方案
+        if (aim == 0) {
+            return 1;
+        }
+        // 如果没有可选货币,返回0种方案
+        if (i == arr.length) {
+            return 0;
+        }
+        // 临时存储方案数
+        int tmp = 0;
+        // 尝试当前i位置的w货币用z张进行组合
+        for (int z = 0; z*arr[i] <= aim; z++) {
+            // 返回后续方案数
+            tmp += f(arr,i+1,aim-(z*arr[i]));
+        }
+        return tmp;
+    }
+
+    /**
+     * 动态规划 严格位置依赖
+     * @param arr 货币面值数组
+     * @param aim 目标面值
+     * @return 返回最大组合方案
+     */
+    public int dp(int[] arr, int aim) {
+        int N = arr.length;
+        int[][] dpT = new int[N+1][aim+1];
+        for (int i = N; i >= 0 ; i--) {
+            for (int r = 0; r <= aim; r++) {
+                if (r == 0) {
+                    dpT[i][r] = 1;
+                } else if (i == N) {
+                    dpT[i][r] = 0;
+                } else {
+                    for (int z = 0; z*arr[i] <= r; z++) {
+                        dpT[i][r] += dpT[i+1][r-(z*arr[i])];
+                    }
+                }
+            }
+        }
+        return dpT[0][aim];
+    }
+
+    /**
+     * 动态规划 优化位置依赖
+     * @param arr 货币面值数组
+     * @param aim 目标面值
+     * @return 返回最大组合方案
+     */
+    public int dp1(int[] arr, int aim) {
+        int N = arr.length;
+        int[][] dpT = new int[N+1][aim+1];
+        for (int i = N; i >= 0 ; i--) {
+            for (int r = 0; r <= aim; r++) {
+                if (r == 0) {
+                    dpT[i][r] = 1;
+                } else if (i == N) {
+                    dpT[i][r] = 0;
+                } else {
+                    // 原本存在枚举行为,存在可优化的位置依赖
+                    dpT[i][r] = r-arr[i] >= 0 ? dpT[i][r-arr[i]] + dpT[i+1][r] : dpT[i+1][r];
+                }
+            }
+        }
+        return dpT[0][aim];
+    }
+}
