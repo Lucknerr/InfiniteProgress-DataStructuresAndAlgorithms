@@ -4,7 +4,7 @@ package com.zl.trappingrainwater;
 public class TrappingRainWater {
 
     /**
-     * 动态规划 没朋暴力递归的过程
+     * 动态规划 没用暴力递归的过程
      * @param height 用户输入数组
      * @return 返回能接到的雨水单位
      */
