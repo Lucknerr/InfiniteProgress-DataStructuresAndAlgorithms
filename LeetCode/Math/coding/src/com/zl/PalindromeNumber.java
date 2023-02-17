@@ -1,7 +1,15 @@
 package com.zl;
 
+import java.util.HashMap;
+import java.util.Map;
+
 // 回文数
 public class PalindromeNumber {
+    static Map<Integer,String> units = new HashMap<>();
+    Map<Integer,String> tens = new HashMap<>();
+    Map<Integer,String> hundreds = new HashMap<>();
+    Map<Integer,String> Thousands = new HashMap<>();
+    Map<Integer,Map<Integer,String>> placeMap = new HashMap<>();
     /**
      大思路
      先把整数反转
@@ -36,5 +44,9 @@ public class PalindromeNumber {
             x /= 10;
         }
         return ans == x || ans / 10 == x;
+    }
+
+    public static void main(String[] args) {
+        boolean[] a = new boolean[2];
     }
 }
