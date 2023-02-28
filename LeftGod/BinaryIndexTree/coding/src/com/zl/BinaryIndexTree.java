@@ -1,0 +1,50 @@
+package com.zl;
+
+// 实现一维IndexTree
+public class BinaryIndexTree {
+    // 辅助数组
+    int[] tree;
+    // 元素个数
+    int N;
+
+    public BinaryIndexTree(int[] nums) {
+        N = nums.length;
+        tree = new int[N+1];
+        for (int i = 0;i < N;i++) add(i,nums[i]);
+    }
+
+    /**
+     * 指定位置，单点增加
+     * @param index 指定位置
+     * @param val 增加的值
+     */
+    public void add(int index, int val) {
+        index++;
+        while (index <= N) {
+            tree[index] += val;
+            // 将index以二进制形式最右侧的1与index本身相加
+            index += index & -index;
+        }
+    }
+
+    /**
+     * 求指定位置的前缀和
+     * @param index 指定位置
+     */
+    public int sum(int index) {
+        index++;
+        int ans = 0;
+        while (index > 0) {
+            ans += tree[index];
+            // 将index以二进制形式最右侧的1剥离
+            index -= index & -index;
+        }
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2,5,4,9,7,5,3,1,5,7,8,9,5,1,2,3};
+        BinaryIndexTree binaryIndexTree = new BinaryIndexTree(nums);
+        System.out.println(binaryIndexTree.sum(12));
+    }
+}

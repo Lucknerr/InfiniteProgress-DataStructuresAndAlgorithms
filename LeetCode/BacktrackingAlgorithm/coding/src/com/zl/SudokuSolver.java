@@ -1,5 +1,8 @@
 package com.zl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SudokuSolver {
     /**
      思路: 将场上本就有的数放入状态容器中
@@ -66,5 +69,15 @@ public class SudokuSolver {
             }
         }
         return false;
+    }
+
+    public static void main(String[] args) {
+        List<Integer> tmp = new ArrayList<>();
+        tmp.add(1);
+        tmp.add(2);
+        tmp.add(3);
+        for (int a : tmp) {
+            System.out.println(a);
+        }
     }
 }
